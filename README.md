@@ -5,3 +5,5 @@ the number of each color plate and soup.
 For example:  '221100' indicates  2 grey, 2 green, 1 yellow, 1 red, 0
 blue and 0 soup.
 Any other format of input will not be accepted.
+
+(you can order only one soup or no soup.)

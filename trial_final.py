@@ -80,8 +80,7 @@ def User2(num): #soup menu + more  order_int[5] = 1
         result =  float(User1(num)) + 8.5
         
         return result
-            
-                
+                       
     
 def User3(num): # no soup menu 
 
@@ -127,17 +126,21 @@ def start_app(order_str):
     return order_int
 
 def check_input(tmp):
+    Tmp = tmp.split()
     soup_range = ['0','1']
-    if len(tmp) != 6:
-        return False
-    if tmp[-1] not in soup_range:
+    if len(Tmp) != 6:  # check if six input
         return False
     else:
+        for i in Tmp: # check if input is number
+            if i.isnumeric() == False:
+                return False 
+            if Tmp[-1] not in soup_range:
+                return False
         return True
 
 if __name__ == "__main__":
 
-    tmp = '000000'
+#    tmp = '000000'
 
     status = True
     while status:
@@ -150,9 +153,7 @@ if __name__ == "__main__":
             continue
         elif check_input(tmp):
             
-            
-        
-            order_str = list(tmp)
+            order_str = tmp.split()
             print('You ordered ' + order_str[0] +' Grey plate(s), ' + order_str[1] +' Green plate(s), '
                   + order_str[2] +' Yellow plate(s), '+ order_str[3] +' Red plate(s), '
                   + order_str[4] +' Blue plate(s), and '+ order_str[5] +' Soup!' )
